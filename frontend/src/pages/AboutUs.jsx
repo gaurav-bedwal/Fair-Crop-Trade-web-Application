@@ -57,22 +57,21 @@ export default function AboutUs() {
                     </a>
                 </div>
 
-                {/* Created By Section */}
+                {/* Leadership Team Data */}
                 <div className="mt-24 text-center">
-                    <div className="bg-gradient-to-br from-[#1f2f22] to-[#2a3f2e] p-10 rounded-3xl border border-white/10 inline-block">
-                        <h3 className="text-xl font-semibold text-gray-400 mb-6">Created by</h3>
-                        <div className="flex flex-wrap justify-center gap-6">
-                            {[
-                                { name: "Arun", regNo: "12303946" },
-                                { name: "Ankur", regNo: "12324824" },
-                                { name: "Vaibhav", regNo: "12312316" }
-                            ].map((creator, i) => (
-                                <div key={i} className="bg-[#111a13] px-6 py-4 rounded-2xl border border-green-500/30 hover:border-green-400 transition-all duration-300 hover:scale-105">
-                                    <span className="text-green-400 font-bold text-lg block">{creator.name}</span>
-                                    <span className="text-gray-500 text-sm">{creator.regNo}</span>
-                                </div>
-                            ))}
-                        </div>
+                    <h2 className="text-3xl font-bold mb-12">Leadership Team</h2>
+                    <div className="grid md:grid-cols-3 gap-10">
+                        {[
+                            { name: "Rahul Sharma", role: "CEO & Founder", image: "https://i.pravatar.cc/150?img=11" },
+                            { name: "Priya Patel", role: "Head of Operations", image: "https://i.pravatar.cc/150?img=44" },
+                            { name: "Vikram Singh", role: "Chief Technology Officer", image: "https://i.pravatar.cc/150?img=33" }
+                        ].map((member, i) => (
+                            <div key={i} className="bg-gradient-to-br from-[#1f2f22] to-[#2a3f2e] p-8 rounded-3xl border border-white/10 hover:border-green-500/50 transition-all duration-300 hover:-translate-y-2">
+                                <img src={member.image} alt={member.name} className="w-24 h-24 rounded-full mx-auto mb-6 border-2 border-green-500 object-cover" />
+                                <h4 className="text-xl font-bold text-white mb-2">{member.name}</h4>
+                                <p className="text-green-400">{member.role}</p>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
